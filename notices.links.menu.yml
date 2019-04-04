@@ -2,7 +2,7 @@
 notices.admin:
     title: 'Información y administración del módulo noticias'
     description: 'Este módulo sirve para añadir un bloque que muestre noticias'
-    route:name: notices.description
+    route_name: notices.description
     weight: 120
-    parent: system.admin_config.development
+    parent: system.admin_config_development
     
