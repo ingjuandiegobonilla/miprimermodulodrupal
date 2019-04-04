@@ -1,0 +1,8 @@
+## YAML Template.
+notices.admin:
+    title: 'Información y administración del módulo noticias'
+    description: 'Este módulo sirve para añadir un bloque que muestre noticias'
+    route:name: notices.description
+    weight: 120
+    parent: system.admin_config.development
+    

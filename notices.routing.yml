@@ -1,2 +1,10 @@
 ## YAML Template.
----
+notices.description:
+    path: '/noticias/example'
+    defaults:
+        _controller: '\Drupal\notices\Controller\NoticesController::description'
+        _title: 'Noticias'
+    requirements:
+        _access: 'TRUE'
+        
+        
