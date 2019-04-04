@@ -5,7 +5,7 @@ notices.description:
         _controller: '\Drupal\notices\Controller\NoticesController::description'
         _title: 'Notices'
     requirements:
-        _access: 'TRUE'
+        _permission: 'access config'
         
 notices.noticia:
     path: '/notices/noticia/{idNoticia}/{vista}'
@@ -13,4 +13,4 @@ notices.noticia:
         _controller: '\Drupal\notices\COntroller\NoticesController::getNoticia'
         _title: 'Detalle de la noticia'
     requirements:
-        _access: 'TRUE'
+        _permission: 'acceder content'

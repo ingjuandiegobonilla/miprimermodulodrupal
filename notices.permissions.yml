@@ -1,0 +1,10 @@
+## YAML Template.
+acceder content:
+    title: 'Acceso a las noticias'
+    description: 'Permite a acceder a la vista de detalles y las noticias'
+
+access config:
+    title: 'Acceso a configuración del modulo'
+    description: 'Permite acceder a la configuración del modulo notices'
+    
+    

@@ -1,0 +1,18 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+function notices_help($route_name, RouteMatchInterface $route_match){
+    switch ($route_name) {
+        case 'help.page.notices';
+            return t('Esta es la información de ayuda de noticias');
+        case 'notices.description';
+            return t('Esta es la información del apartado de noticias');
+    }
+}
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
