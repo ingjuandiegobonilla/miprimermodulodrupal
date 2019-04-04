@@ -12,7 +12,20 @@ class NoticesController {
         
         return $build;
 }
+
+    public function getNoticia($idNoticia, $vista){
+        
+        $build = array(
+            '#type' => 'markup',
+            '#markup' => '<p>'.t('Esta es la página que muestra noticias con la noticia con id ').'<strong>'.$idNoticia.'</strong>'.t(' con la vista ').'<strong>'.$vista.'</strong>'.'</p>',
+        );
+        
+        return $build;
+    
+    }
 }
+
+
 
 
 /* 
