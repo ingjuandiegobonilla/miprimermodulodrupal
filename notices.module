@@ -10,6 +10,19 @@ function notices_help($route_name, RouteMatchInterface $route_match){
             return t('Esta es la información del apartado de noticias');
     }
 }
+
+function notices_permission(){
+      return array(
+      'acceder content' => array(
+          'title' => t('Acceso a las noticias'),
+          'description' => t('Permite a acceder a la vista de detalles y las noticias'),
+      ), 
+          'access config' => array(
+          'title' => t('Acceso a configuración del modulo'),
+          'description' => t('Permite acceder a la configuración del modulo notices'),
+      ), 
+    );
+}
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
