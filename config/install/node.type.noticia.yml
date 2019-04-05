@@ -1,0 +1,17 @@
+uuid: fd4962f0-5367-4e41-bbfc-4b55ae70c222
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Noticia
+type: noticia
+description: 'Tipo de contenido para el modulo noticias'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
