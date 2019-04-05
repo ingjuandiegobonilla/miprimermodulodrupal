@@ -59,10 +59,26 @@ class NoticesSimpleBlock extends BlockBase {
      */
     
     public function build(){
-        
+     /*   
      $node = entity_load("node", 1);
      $contenido = $this->t("<ul><li>%titulo</li></ul>", ["%titulo" => $node->title[0]->value]);
-     
+     */
+        
+     $contenido = "<ul>";
+
+    $query = \Drupal::entityQuery('node')
+     ->condition('type', 'noticia')
+    ->condition('status', 1);
+
+    $nids = $query->execute();
+
+    $nodes = entity_load_multiple('node', $nids);
+    foreach ($nodes as $node) {
+      $contenido .= "<li>".$node->title[0]->value."</li>";
+    }
+
+
+    $contenido .= "</ul>";
         
         
         return array(
