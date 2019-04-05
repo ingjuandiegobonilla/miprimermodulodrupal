@@ -2,14 +2,21 @@
 
 namespace Drupal\notices\Controller;
 
-class NoticesController {
+use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
+
+class NoticesController extends ControllerBase {
 
     public function description(){
-        $build = array(
-            '#type' => 'markup',
-            '#markup' => '<p>'.t('Hola Mundo').'</p>',
-        );
         
+        $url = Url::fromRoute('block.admin_display');
+        $block_admin_link = $this->l($this->t('Pagina de administración de bloques'), $url);
+        
+          $build = ['#type' => 'markup',
+            '#markup' => $this->t('<p>Noticias ofrece un bloque en el que se mostrarán las noticias. Por eso es necesario una vez instalado el módulo, añadir el bloque de noticias desde la página de administración de bloques'.'</p><p>!block_admin_link</p>',
+            ['!block_admin_link' => $block_admin_link]),
+            ];
+         
         return $build;
 }
 
