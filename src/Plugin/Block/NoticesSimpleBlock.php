@@ -60,9 +60,14 @@ class NoticesSimpleBlock extends BlockBase {
     
     public function build(){
         
+     $node = entity_load("node", 1);
+     $contenido = $this->t("<ul><li>%titulo</li></ul>", ["%titulo" => $node->title[0]->value]);
+     
+        
+        
         return array(
            '#type' => 'markup',
-            '#markup' => $this->configuration['noticias_block_string'],
+            '#markup' => $this->configuration['noticias_block_string'].$contenido,
         );
     }
     
