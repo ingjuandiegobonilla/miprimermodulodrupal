@@ -6,6 +6,7 @@
 namespace Drupal\notices\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormStateInterface;
 
 
 /**
@@ -29,10 +30,30 @@ class NoticesSimpleBlock extends BlockBase {
          'noticias_block_string' => $this->t('Valor por defecto. Este bloque se creó a las %time', array('%time' => date('c'))),
          
          
-     );   
-        
-        
+     ); 
     }
+     /**
+     * {@inheritdoc}
+     */
+     public function blockForm($form, FormStateInterface $form_state) {
+    $form['noticias_block_string_text'] = array(
+      '#type' => 'textarea',
+      '#title' => $this->t('Contenido del bloque'),
+      '#description' => $this->t('Este texto aparecerá en el bloque.'),
+      '#default_value' => $this->configuration['noticias_block_string'],
+    );
+    return $form;
+  }
+      /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->configuration['noticias_block_string']
+      = $form_state->getValue('noticias_block_string_text');
+  }
+  
+        
+    
     /**
      * {@inheritdoc}
      */
